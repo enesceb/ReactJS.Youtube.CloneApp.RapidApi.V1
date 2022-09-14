@@ -6,7 +6,7 @@ import { demoChannelTitle, demoChannelUrl, demoThumbnailUrl, demoVideoTitle, dem
 
 
 const VideoCard = ({video:{id:{videoId}, snippet}}) => {
-    console.log(snippet)
+
   return (
     <Card sx={{width: {md: '320px', xs: '350px'}, boxShadow:'none', borderRadius:0}}>
         <Link to={videoId? `/video/${videoId}`: demoVideoUrl}>
