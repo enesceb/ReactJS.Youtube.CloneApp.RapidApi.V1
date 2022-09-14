@@ -11,15 +11,16 @@ const Feed = () => {
 
   useEffect(() => {
    APIService(`search?part=snippet&q=${selectedCategory}`)
-    .then((data)=>{setVideos(data.items)})
+    .then((data)=>{setVideos(data.items)} )
+  
   }, [selectedCategory])
   
 
   return (
   <Stack sx={{flexDirection: {sx:"column", md:"row"}}}>
-    <Box sx={{height: {sx: "auto", md:"92vh"}, borderRight: "1px solid #3d3d3d", px:{sx:0, md:2}}}>
+    <Box sx={{height: {sx: "auto", md:"92vh"},overflow: 'auto', borderRight: "1px solid #3d3d3d", px:{sx:0, md:2}}}>
     
-    <Sidebar
+    <Sidebar 
     selectedCategory={selectedCategory}
     setselectedCategory={setselectedCategory}
     /> 
@@ -38,9 +39,11 @@ const Feed = () => {
     >
       {selectedCategory} <span style={{color: "#F31503"}}>Videos</span>
     </Typography>
-    </Box>
 
     <Videos videos={videos}/>
+    </Box>
+
+   
   </Stack>
     
   )
