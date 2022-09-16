@@ -12,7 +12,7 @@ const options = {
     'X-RapidAPI-Host': 'youtube-v31.p.rapidapi.com'
   }
 };
-console.log(process.env.REACT_API_KEY)
+
 
 export const APIService = async (url) => {
  const {data} = await axios.get(`${BASE_URL}/${url}`, options)
